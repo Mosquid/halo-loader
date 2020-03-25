@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body,
+      html {
+        height: 100%;
+      }
+
+      @keyframes spin {
+        0% {
+          width: 100vw;
+          height: 100vh;
+          transform: rotate(0deg);
+        }
+        25% {
+          width: 150vh;
+          height: 100vw;
+          transform: rotate(90deg);
+        }
+        50% {
+          width: 100vw;
+          height: 100vh;
+          transform: rotate(180deg);
+        }
+        75% {
+          width: 150vh;
+          height: 100vw;
+          transform: rotate(270deg);
+        }
+        100% {
+          width: 100vw;
+          height: 100vh;
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes shine {
+        0% {
+          text-shadow: -3px 3px 20px rgba(102, 232, 255, 0.378);
+        }
+        25% {
+          text-shadow: 3px -3px 30px rgba(102, 232, 255, 0.878);
+        }
+        75% {
+          text-shadow: 3px 3px 10px rgba(102, 232, 255, 0.378);
+        }
+      }
+
+      #halo-loader {
+        background-color: rgb(70, 70, 70);
+        transform-origin: center center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #halo-spin {
+        height: 100vh;
+        width: 100vw;
+        animation: spin 10s linear 0s infinite;
+      }
+
+      #halo-loader .halo {
+        position: absolute;
+        width: 0;
+        height: 0;
+        box-shadow: 0 0 300px 200px rgba(102, 232, 255, 0.378);
+      }
+      .halo-top {
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      .halo-right {
+        top: 50%;
+        left: 100%;
+        transform: translate(0, -50%);
+      }
+      .halo-bottom {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      .halo-left {
+        top: 50%;
+        right: 100%;
+        transform: translate(0, -50%);
+      }
+      #halo-label {
+        position: absolute;
+        top: 50%;
+        line-height: 1;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        text-align: center;
+        color:  rgb(70, 70, 70);;
+        font-size: 40px;
+        font-weight: 100;
+        animation: shine 4s linear 0s infinite;
+        text-shadow: -3px 3px 10px rgba(102, 232, 255, 0.378);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="halo-loader">
+      <div id="halo-label">Loading...</div>
+      <div id="halo-spin">
+        <div class="halo halo-top"></div>
+        <div class="halo halo-right"></div>
+        <div class="halo halo-bottom"></div>
+        <div class="halo halo-left"></div>
+      </div>
+    </div>
+  </body>
+</html>
