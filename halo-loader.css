@@ -10,7 +10,7 @@ html {
     transform: rotate(0deg);
   }
   25% {
-    width: 150vh;
+    width: 100vh;
     height: 100vw;
     transform: rotate(90deg);
   }
@@ -20,7 +20,7 @@ html {
     transform: rotate(180deg);
   }
   75% {
-    width: 150vh;
+    width: 100vh;
     height: 100vw;
     transform: rotate(270deg);
   }
@@ -59,14 +59,14 @@ html {
 #halo-spin {
   height: 100vh;
   width: 100vw;
-  animation: spin 10s linear 0s infinite;
+  animation: spin 15s linear 0s infinite;
 }
 
 #halo-loader .halo {
   position: absolute;
   width: 0;
   height: 0;
-  box-shadow: 0 0 300px 200px rgba(102, 232, 255, 0.378);
+  box-shadow: 0 0 300px 100px rgba(102, 232, 255, 0.378);
 }
 .halo-top {
   bottom: 100%;
